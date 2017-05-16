@@ -1,6 +1,6 @@
 var={"car":"volvo", "fruit":"apple"}
 print(var["fruit"])
-for f in var:	
+for f in var:
     print("key: " + f + " value: " + var[f])
 print()
 print()
@@ -13,10 +13,10 @@ for f in var1["donut"]:
 print()
 print()
 
-#Using the examples above write code to print one value of each JSON structure and a loop to print all values below.	
+#Using the examples above write code to print one value of each JSON structure and a loop to print all values below.
 var={"vegetable":"carrot", "fruit":"apple","animal":"cat","day":"Friday"}
 print(var["vegetable"])
-for f in var:	
+for f in var:
     print("key: " + f + " value: " + var[f])
 print()
 print()
@@ -31,10 +31,10 @@ print()
 
 myvar={"dessert":"ice cream", "exercise":"push ups","eyes":"blue","gender":"male"}
 print(myvar["exercise"])
-for f in myvar:	
+for f in myvar:
     print("key: " + f + " value: " + myvar[f])
 print()
-print()	
+print()
 
 myvar1={"dessert":["cake","candy","ice cream","pudding","cookies"]}
 print(myvar1["dessert"][0])

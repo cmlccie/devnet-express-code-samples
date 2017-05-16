@@ -1,6 +1,6 @@
 
 rooms={
-    "items": [        
+    "items": [
         {
             "id": "Y2lzY29zcGFyazovL300vNDM5YmNiZTAtNTI5NC0xMWU2LWExMTEtMTdlMWMwMDI4ZmIy",
             "type": "group",
@@ -9,7 +9,7 @@ rooms={
             "teamId": "Y2lzY29zcGFyazovvNDZlMmFjZDAtMjBlYy0xMWU2LTg5NTItNWJkZTQwMjVmZDVm",
             "title": "GSX Mini Hacks",
             "lastActivity": "2016-08-09T19:02:45.199Z"
-        },        
+        },
         {
             "id": "Y2lzY29zcGFyazovL00vYzNjOTU1NDAtNDc3Yi0xMWU2LWEwYmYtYTc2NTNjNWQwZTMw",
             "type": "group",
@@ -17,7 +17,7 @@ rooms={
             "isLocked": False,
             "title": "CLUS16 - Learning Labs",
             "lastActivity": "2016-07-14T21:52:24.432Z"
-        },        
+        },
         {
             "id": "Y2lzY29zcGFyazovL3VzL1JPTvNzAxNjQ0YjAtMjFkZi0xMWU2LWJhMjgtNjU2ZWJlYjhjNjY5",
             "type": "group",

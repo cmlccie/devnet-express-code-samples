@@ -5,7 +5,7 @@ import requests
 virl_url = "http://198.18.134.1:19399/"
 api_call = "/simengine/rest/launch"
 
-virl_url += api_call 
+virl_url += api_call
 
 # Username and password
 username = "guest"

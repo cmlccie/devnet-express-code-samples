@@ -24,11 +24,11 @@
 #
 # TECHNICAL ASSISTANCE CENTER (TAC) SUPPORT IS NOT AVAILABLE FOR THIS SCRIPT.
 #
-# Always check for the latest Version of this script via http://cs.co/NWPLab 
+# Always check for the latest Version of this script via http://cs.co/NWPLab
 # ############################################################################
-# 
-# This script illustrates how to find a spark room by name and post a message 
-# 
+#
+# This script illustrates how to find a spark room by name and post a message
+#
 # ############################################################################
 import _LabEnv
 import json
@@ -47,14 +47,14 @@ r = requests.get(_LabEnv.SPARK_API_ROOMS, headers=_LabEnv.SPARK_HEADERS, verify=
 j = json.loads(r.text)
 
 for tmproom in j['items']:
-  if tmproom['title'] == _LabEnv.SPARK_ROOM_NAME:
-    SPARK_ROOM_ID = tmproom['id']
-    print("Found room ID for '" + _LabEnv.SPARK_ROOM_NAME + "' : " + SPARK_ROOM_ID)
-    break
-    
+    if tmproom['title'] == _LabEnv.SPARK_ROOM_NAME:
+        SPARK_ROOM_ID = tmproom['id']
+        print("Found room ID for '" + _LabEnv.SPARK_ROOM_NAME + "' : " + SPARK_ROOM_ID)
+        break
+
 if SPARK_ROOM_ID is None:
-  print("Failed to find room ID for '" + _LabEnv.SPARK_ROOM_NAME + "'")
-  sys.exit(1)
+    print("Failed to find room ID for '" + _LabEnv.SPARK_ROOM_NAME + "'")
+    sys.exit(1)
 
 # ############################################################################
 # Post to Spark Room

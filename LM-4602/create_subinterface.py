@@ -19,7 +19,7 @@ PASS = 'C1sco12345'
 BASE = 'GigabitEthernet3'
 
 
-def create_vlan(host, port, user, password, interface, 
+def create_vlan(host, port, user, password, interface,
                 vlan, ip, ssl, insecure):
     """
     Function to create a subinterface on CSR1000V.

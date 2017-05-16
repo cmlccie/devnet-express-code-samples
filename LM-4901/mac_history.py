@@ -40,17 +40,17 @@ def main():
         l = []
         while (count < 10):
 
-          macAddress= json_data["Macaddress"]
-          x = json_data["Data"][count]["x"]
-          y = json_data["Data"][count]["y"]
-          chgOn = json_data["Data"][count]["chgOn"]
-          timestamp = time.ctime(int(chgOn)/1000)
-          flr = json_data["Data"][count]["flr"]
+            macAddress= json_data["Macaddress"]
+            x = json_data["Data"][count]["x"]
+            y = json_data["Data"][count]["y"]
+            chgOn = json_data["Data"][count]["chgOn"]
+            timestamp = time.ctime(int(chgOn)/1000)
+            flr = json_data["Data"][count]["flr"]
 
-          s = [timestamp, str(x), str(y), str(flr)]
-          l.append(s)
+            s = [timestamp, str(x), str(y), str(flr)]
+            l.append(s)
 
-          count = count + 1
+            count = count + 1
 
 
         print("----------------------------------------------------------------")
@@ -59,7 +59,7 @@ def main():
         print(" List contains timestamp, xCoordinates, yCoordinates , FloorId")
         print("----------------------------------------------------------------")
         for s in l:
-          print(list(s))
+            print(list(s))
 
 
     except requests.exceptions.RequestException as e:

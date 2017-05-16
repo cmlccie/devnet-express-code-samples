@@ -13,7 +13,7 @@ for f in var1["flavors"]["flavor"]:
 print()
 print()
 
-#Using the examples above write code to print one value of each JSON structure and a loop to print all values.	
+#Using the examples above write code to print one value of each JSON structure and a loop to print all values.
 myvar={"exercise":{"high impact":["running","jumping","jump rope","running down stairs","skiing"]}}
 print(myvar["exercise"]["high impact"][0])
 print("My favorite high impact exercises are:", end=" ")
@@ -42,4 +42,3 @@ myvar1={"type":"car","cars":{"sports":[{"make":"Chevrolet", "model":"Corvette", 
 print("id: " + str(myvar1["cars"]["sports"][0]["id"]) + " make: " + myvar1["cars"]["sports"][0]["make"] + " model: " + myvar1["cars"]["sports"][0]["model"])
 for f in myvar1["cars"]["sports"]:
     print("id: " + str(f["id"]) + " make: " + f["make"] + " model: " + f["model"])
-

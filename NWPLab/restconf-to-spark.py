@@ -24,13 +24,13 @@
 #
 # TECHNICAL ASSISTANCE CENTER (TAC) SUPPORT IS NOT AVAILABLE FOR THIS SCRIPT.
 #
-# Always check for the latest Version of this script via http://cs.co/NWPLab 
+# Always check for the latest Version of this script via http://cs.co/NWPLab
 # ############################################################################
-# 
-# This sample script illustrates how to query operational data from a router 
-# via the RESTCONF API and then post the results into an existing Spark room 
+#
+# This sample script illustrates how to query operational data from a router
+# via the RESTCONF API and then post the results into an existing Spark room
 # via the Spark REST APIs.
-# 
+#
 # Initial Version by Joe Clarke - thanks Joe!
 # ############################################################################
 import _LabEnv
@@ -61,7 +61,7 @@ for intf in j['ietf-interfaces:interfaces-state']['interface']:
 if in_octets == -1 or out_octets == -1:
     print("Failed to find statistics for interface " + INTF)
     sys.exit(1)
-   
+
 # ############################################################################
 # Post to Spark Room
 # ############################################################################

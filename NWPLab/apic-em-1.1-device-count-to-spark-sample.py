@@ -24,14 +24,14 @@
 #
 # TECHNICAL ASSISTANCE CENTER (TAC) SUPPORT IS NOT AVAILABLE FOR THIS SCRIPT.
 #
-# Always check for the latest Version of this script via http://cs.co/NWPLab 
+# Always check for the latest Version of this script via http://cs.co/NWPLab
 # ############################################################################
-# 
-# This sample script illustrates how to 
-# 1) query the number of network devices from the APIC-EM network information 
+#
+# This sample script illustrates how to
+# 1) query the number of network devices from the APIC-EM network information
 #    base via the APIC-EM REST APIs and
 # 2) post the result into Spark using a predefined function in _LabEnv
-# 
+#
 # ############################################################################
 import _LabEnv
 from pprint import pprint
@@ -39,9 +39,9 @@ import json
 import requests
 # Disable Certificate warning
 try:
-  requests.packages.urllib3.disable_warnings()
+    requests.packages.urllib3.disable_warnings()
 except:
-  pass
+    pass
 
 # ############################################################################
 # Start API Session

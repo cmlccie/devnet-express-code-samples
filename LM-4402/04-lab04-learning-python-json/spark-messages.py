@@ -6,13 +6,13 @@ ROOM_NAME    = "" #put the name of a room to which you belong between the quotes
 MESSAGE      = "" #put your message between the quotes.
 
 
-def setHeaders():         
+def setHeaders():
     accessToken_hdr = 'Bearer ' + ACCESS_TOKEN
     spark_header = {'Authorization': accessToken_hdr, 'Content-Type': 'application/json; charset=utf-8'}
     return spark_header
 
 
-def getRooms(theHeader):    
+def getRooms(theHeader):
     uri = 'https://api.ciscospark.com/v1/rooms'
     resp = requests.get(uri, headers=theHeader)
     return resp.json()
@@ -25,7 +25,7 @@ def findRoom(roomList,name):
             break
     return roomId
 
-def getRoomMessages(theHeader,roomID):    
+def getRoomMessages(theHeader,roomID):
     uri = 'https://api.ciscospark.com/v1/messages?roomId=' + roomID
     resp = requests.get(uri, headers=theHeader)
     return resp.json()

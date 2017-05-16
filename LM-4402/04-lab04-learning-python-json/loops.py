@@ -8,7 +8,7 @@ print()
 basket=["apple","peach","pear","cherry"]
 for fruit in basket:
     print (fruit)
-print()	
+print()
 
 my_color={"red":1,"blue":2,"green":3}
 for color in my_color:
@@ -18,5 +18,5 @@ print()
 name = "Brett"
 if name == "Brett":
     print ("Brett who?")
-else: 
+else:
     print ("Nice name!")

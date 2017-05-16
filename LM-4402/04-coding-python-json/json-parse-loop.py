@@ -1,5 +1,5 @@
 
-# Classification Data	
+# Classification Data
 cars={"sportsCars":[{"Make":"Volkswagon","Model":"Porsche"},{"Make":"Dodge","Model":"Viper"},{"Make":"Chevy","Model":"Corvette"}]}
 
 ### Write loop here to parse and print data
@@ -17,7 +17,7 @@ spark_rooms={
         },
         {
             "title": "Room with a View!"
-        }        
+        }
     ]
 }
 
@@ -64,7 +64,7 @@ spark_rooms={
             "id": "Y2lzY29zcGFyazovLVzL1JPT00vZTY2Yzc3ZDAtZTRjNC0xMWU2LWJjNGItNjliMTc1N2J633",
             "isLocked": "false",
             "title": "Living Room"
-        }        
+        }
     ]
 }
 

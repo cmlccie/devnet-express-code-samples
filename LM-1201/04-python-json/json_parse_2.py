@@ -14,7 +14,7 @@ print()
 print()
 
 
-#Using the examples above write code to print one value of each JSON structure and a loop to print all values.	
+#Using the examples above write code to print one value of each JSON structure and a loop to print all values.
 myvar={"exercise":{"high impact":["running","jumping","jump rope","running down stairs","skiing"]}}
 
 
@@ -25,4 +25,3 @@ myvar1={"author":"Stephen King","famous works":{"novels":[{"title":"The Shining"
 
 
 myvar1={"type":"car","cars":{"sports":[{"make":"Chevrolet", "model":"Corvette", "id":1001},{"make":"Chevrolet", "model":"Camaro", "id":1002},{"make":"Ford", "model":"Mustang", "id":1003},{"make":"Dodge", "model":"Viper", "id":1004},{"make":"Porsche", "model":"911", "id":1005}]}}
-

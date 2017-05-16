@@ -12,7 +12,7 @@ print(soup["soup"]["vegetable"])
 
 ticket={"response": {"serviceTicket": "ST-16891-ugqKRVvCfPJcEaGXnGEN-cas","idleTimeout": 1800,"sessionTimeout": 21600},"version": "1.0"}
 print(ticket["response"]["serviceTicket"])
-        
+
 network={"Network":{"router":{"ipaddress":"192.168.1.21","mac_address":"08:56:27:6f:2b:9c"}}}
 print(network["Network"]["router"]["ipaddress"])
 
@@ -26,7 +26,7 @@ devices={"response": [
       "type": "Cisco Catalyst 2960C-8PC-L Switch",
       "serialNumber": "FOC1637Y3FJ",
       "role": "CORE",
-      "reachabilityStatus": "Reachable",    
+      "reachabilityStatus": "Reachable",
       "instanceUuid": "2dc30cac-072e-4d67-9720-cc302d02695a",
       "id": "2dc30cac-072e-4d67-9720-cc302d02695a"
     },

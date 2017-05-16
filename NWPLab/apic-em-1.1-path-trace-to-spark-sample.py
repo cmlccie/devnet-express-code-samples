@@ -24,15 +24,15 @@
 #
 # TECHNICAL ASSISTANCE CENTER (TAC) SUPPORT IS NOT AVAILABLE FOR THIS SCRIPT.
 #
-# Always check for the latest Version of this script via http://cs.co/NWPLab 
+# Always check for the latest Version of this script via http://cs.co/NWPLab
 # ############################################################################
-# 
+#
 # This sample script illustrates how to run a Path Trace in APIC-EM via it's
 # REST APIs. This includes
 # 1) posting a path trace request
 # 2) querying and parsing the resulting path trace JSON document
 # 3) extracting host names and posting them into Spark
-# 
+#
 # ############################################################################
 import _LabEnv
 from pprint import pprint
@@ -43,9 +43,9 @@ import json
 import requests
 # Disable Certificate warning
 try:
-  requests.packages.urllib3.disable_warnings()
+    requests.packages.urllib3.disable_warnings()
 except:
-  pass
+    pass
 
 ##############################################################################
 # Variables below
@@ -102,8 +102,8 @@ my_nodes_on_path = my_parsed_response['response']['networkElementsInfo']
 
 my_nodes = []
 for p in my_nodes_on_path:
-  my_nodes.append( p.get('name', '.') ) 
-  my_nodes.append( " " )
+    my_nodes.append( p.get('name', '.') )
+    my_nodes.append( " " )
 my_path = ''.join(my_nodes)
 print('Hostnames on the path from %s to %s are: \n %s' % (PATH_SOURCE_IP, PATH_DEST_IP, my_path) )
 

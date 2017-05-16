@@ -24,11 +24,11 @@
 #
 # TECHNICAL ASSISTANCE CENTER (TAC) SUPPORT IS NOT AVAILABLE FOR THIS SCRIPT.
 #
-# Always check for the latest Version of this script via http://cs.co/NWPLab 
+# Always check for the latest Version of this script via http://cs.co/NWPLab
 # ############################################################################
-# 
-# This is a simple script leveraging _LabEnv to post into a Spark Room 
-# 
+#
+# This is a simple script leveraging _LabEnv to post into a Spark Room
+#
 # ############################################################################
 import _LabEnv
 import json

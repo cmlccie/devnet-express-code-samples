@@ -24,14 +24,14 @@
 #
 # TECHNICAL ASSISTANCE CENTER (TAC) SUPPORT IS NOT AVAILABLE FOR THIS SCRIPT.
 #
-# Always check for the latest Version of this script via http://cs.co/NWPLab 
+# Always check for the latest Version of this script via http://cs.co/NWPLab
 # ############################################################################
-# 
+#
 # This sample script illustrates how to run a Path Trace in APIC-EM via it's
 # REST APIs. This includes
 # 1) posting a path trace request
 # 2) querying and parsing the resulting path trace JSON document
-# 
+#
 # ############################################################################
 import _LabEnv
 from pprint import pprint
@@ -42,9 +42,9 @@ import json
 import requests
 # Disable Certificate warning
 try:
-  requests.packages.urllib3.disable_warnings()
+    requests.packages.urllib3.disable_warnings()
 except:
-  pass
+    pass
 
 ##############################################################################
 # Variables below
@@ -102,7 +102,7 @@ print(my_path)
 
 print('Parsed JSON Response - subset Python Dict object: ')
 my_nodes_on_path = my_parsed_response['response']['networkElementsInfo']
-pprint(my_nodes_on_path, depth=2) 
+pprint(my_nodes_on_path, depth=2)
 
 ##############################################################################
 # EOF

@@ -15,10 +15,10 @@ STATUS_OK = 200
 
 
 #MISSION: fill in the variables below.
-TROPO_APP_NAME	= "" # Your Tropo network application name.  Enter a different name if you named it something else.
-TROPO_USER 		= ""   # Enter your Tropo user name
-TROPO_PASS 		= ""   # Enter your Tropo password
-YOUR_NAME  		= ""   # Enter your name
+TROPO_APP_NAME  = "" # Your Tropo network application name.  Enter a different name if you named it something else.
+TROPO_USER              = ""   # Enter your Tropo user name
+TROPO_PASS              = ""   # Enter your Tropo password
+YOUR_NAME               = ""   # Enter your name
 SPARK_TOKEN     = ""   # Enter your Spark token
 SPARK_ROOM      = ""   # Enter the Spark room name that you are a member of to which you will post a message
 
@@ -98,7 +98,7 @@ def send_spark_message(token,roomId,message):
 
 
 #Main engine function
-def main():    
+def main():
     app_id=get_tropo_app_id(TROPO_API,TROPO_APP_NAME,TROPO_USER,TROPO_PASS)
     if(app_id != None):
         phone_num = get_tropo_phone_number(TROPO_API,app_id,TROPO_USER,TROPO_PASS)
