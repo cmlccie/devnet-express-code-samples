@@ -1,15 +1,15 @@
 var={"car":"volvo", "fruit":"apple"}
 print(var["fruit"])
 for f in var:	
-	print("key: " + f + " value: " + var[f])
+    print("key: " + f + " value: " + var[f])
 print()
 print()
-	
+
 var1={"donut":["chocolate","glazed","sprinkled"]}
 print(var1["donut"][0])
 print("My favorite donut flavors are:", end= " ")
 for f in var1["donut"]:
-	print(f, end=" ")
+    print(f, end=" ")
 print()
 print()
 
@@ -21,6 +21,6 @@ var1={"animal":["dog","cat","fish","tiger","camel"]}
 
 
 myvar={"dessert":"ice cream", "exercise":"push ups","eyes":"blue","gender":"male"}
-	
+
 
 myvar1={"dessert":["cake","candy","ice cream","pudding","cookies"]}

@@ -8,7 +8,7 @@ print()
 
 #Parse JSON with loops
 for hungry in donut["flavors"]["flavor"]:
-	print(hungry["id"] + "  " + hungry["type"])
+    print(hungry["id"] + "  " + hungry["type"])
 print()
 
 
@@ -21,4 +21,4 @@ print()
 
 #Parse JSON with loops
 for auto in cars["sports"]:
-	print(auto + "  " + cars["sports"][auto])
+    print(auto + "  " + cars["sports"][auto])

@@ -69,13 +69,13 @@ def get_config(token, url, id):
     response.raise_for_status()
     response = response.json()
 
-	#Find the hostname in the response body and save it to a hostname variable
+    #Find the hostname in the response body and save it to a hostname variable
     hostname = re.findall('hostname\s(.+?)\s', response['response'])[0]
 
-	#Create a date_time variable which will hold current time
+    #Create a date_time variable which will hold current time
     date_time = datetime.datetime.now()
 
-	#Create a variable which will hold the hostname combined with the date and time
+    #Create a variable which will hold the hostname combined with the date and time
     #The format will be hostname_year_month_day_hour.minute.second
     file_name = hostname + '_' + str(date_time.year) + '_' + str(date_time.month) + '_' + \
                str(date_time.day) + '_' + str(date_time.hour) + '.' + str(date_time.minute) + \
@@ -83,10 +83,10 @@ def get_config(token, url, id):
 
     file = open(file_name+'.txt', 'w')
 
-	#Write response body to the file
+    #Write response body to the file
     file.write(response['response'])
 
-	#Close the file when writing is complete
+    #Close the file when writing is complete
     file.close()
 
 
