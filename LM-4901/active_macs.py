@@ -9,10 +9,9 @@ def main():
         username = 'learning'
         password = 'learning'
         restURL = 'https://cmxlocationsandbox.cisco.com/api/location/v2/clients?sortBy=macAddress:ASC'
-        request = requests.get(
-        url = restURL,
-        auth = HTTPBasicAuth(username,password),
-        verify=False)
+        request = requests.get(url = restURL,
+                               auth = HTTPBasicAuth(username,password),
+                               verify=False)
 
         macValues=[]
         jdata = json.loads(request.text)

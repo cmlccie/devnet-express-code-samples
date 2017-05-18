@@ -28,10 +28,9 @@ def main():
 
     macAddress = input("macAddress: ")
     try:
-        response = requests.get(
-        url = restURL1 +"/"+ macAddress,
-        auth = HTTPBasicAuth(username,password),
-        verify=False)
+        response = requests.get(url = restURL1 +"/"+ macAddress,
+                                auth = HTTPBasicAuth(username,password),
+                                verify=False)
 
         json_data = response.json()
 

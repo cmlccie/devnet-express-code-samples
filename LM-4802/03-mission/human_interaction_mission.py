@@ -52,9 +52,9 @@ def get_tropo_phone_number(tropo_api, tropo_app_id, tropo_user, tropo_pass):
     header = {"content-type": "application/json"}
     # Create the URI string for our Tropo application
     url = "{api}{address}{app}{addr}".format(api=tropo_api,
-                                            address="/applications/",
-                                            app=tropo_app_id,
-                                            addr="/addresses")
+                                             address="/applications/",
+                                             app=tropo_app_id,
+                                             addr="/addresses")
     response = requests.get(url,auth=(tropo_user,tropo_pass),headers=header,verify=False)
     if(response):
         resp=response.json()

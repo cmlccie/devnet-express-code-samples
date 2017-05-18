@@ -10,10 +10,9 @@ def main():
         username = 'learning'
         password = 'learning'
         restURL = 'https://cmxlocationsandbox.cisco.com/api/location/v2/clients/count'
-        request = requests.get(
-        url = restURL,
-        auth = HTTPBasicAuth(username,password),
-        verify=False)
+        request = requests.get(url = restURL,
+                               auth = HTTPBasicAuth(username,password),
+                               verify=False)
 
         str_request = request.json()
         clientcount = str_request['count']

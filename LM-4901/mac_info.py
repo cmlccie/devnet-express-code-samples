@@ -32,10 +32,9 @@ def main():
         macAddress = input("macAddress: ")
 
         try:
-            response = requests.get(
-            url = restURL1 +"/"+ macAddress,
-            auth = HTTPBasicAuth(username,password),
-            verify=False)
+            response = requests.get(url = restURL1 +"/"+ macAddress,
+                                    auth = HTTPBasicAuth(username,password),
+                                    verify=False)
 
             json_data = response.json()
 
@@ -44,10 +43,9 @@ def main():
             chgOn = json_data["Data"][0]["chgOn"]
             timestamp = time.ctime(int(chgOn)/1000)
 
-            response = requests.get(
-            url = restURL2 +"/"+ macAddress,
-            auth = HTTPBasicAuth(username,password),
-            verify=False)
+            response = requests.get(url = restURL2 +"/"+ macAddress,
+                                    auth = HTTPBasicAuth(username,password),
+                                    verify=False)
 
         except requests.exceptions.RequestException as e:
             print(e)

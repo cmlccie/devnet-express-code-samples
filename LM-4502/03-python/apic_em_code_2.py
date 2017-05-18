@@ -77,9 +77,13 @@ def get_config(token, url, id):
 
     #Create a variable which will hold the hostname combined with the date and time
     #The format will be hostname_year_month_day_hour.minute.second
-    file_name = hostname + '_' + str(date_time.year) + '_' + str(date_time.month) + '_' + \
-               str(date_time.day) + '_' + str(date_time.hour) + '.' + str(date_time.minute) + \
-                '.' + str(date_time.second)
+    file_name = (hostname + '_'
+                 + str(date_time.year) + '_'
+                 + str(date_time.month) + '_'
+                 + str(date_time.day) + '_'
+                 + str(date_time.hour) + '.'
+                 + str(date_time.minute) + '.'
+                 + str(date_time.second))
 
     file = open(file_name+'.txt', 'w')
 

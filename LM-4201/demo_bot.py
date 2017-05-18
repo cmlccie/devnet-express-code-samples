@@ -30,7 +30,7 @@ except:
         print("Flask was successfully imported")
     except PermissionError as e:
         print("You don't have permissions to install flask library.\n"
-            "Try to run the script with elevated privileges.")
+              "Try to run the script with elevated privileges.")
         print(e)
         exit()
 
@@ -50,9 +50,9 @@ URL = "https://api.ciscospark.com/v1"
 # BOT'S ACCESS TOKEN
 bearer = "Zjk4Yjk0NWItZDZlMC00ZTJlLWIzZDYtMTA3YzBkMTc5MDBiOGNmNjNkNGQtNDI0"
 headers = {
-  "Accept": "application/json",
-  "Content-Type": "application/json; charset=utf-8",
-  "Authorization": "Bearer " + bearer
+    "Accept": "application/json",
+    "Content-Type": "application/json; charset=utf-8",
+    "Authorization": "Bearer " + bearer
 }
 
 parser = argparse.ArgumentParser()
@@ -63,7 +63,7 @@ if '@' in args.email:
     EMAIL=args.email
 else:
     exit("Please provide an email address for webhook filtering.\n"\
-      "Use '-h' to get help.")
+         "Use '-h' to get help.")
 
 def ngrok():
     if platform.system() == "Windows":
@@ -114,8 +114,8 @@ def ngrok():
             print("ngrok was not found.")
             print("Downloading ngrok for MacOS from website...")
             set_ngrok = subprocess.Popen(
-              ["wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip" \
-               "&& unzip ngrok-stable-darwin-amd64.zip"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+                ["wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip" \
+                 "&& unzip ngrok-stable-darwin-amd64.zip"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             while set_ngrok.poll() is None:
                 continue
             check_ngrok = subprocess.Popen(["ls -al ./ | grep ngrok"], shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -167,17 +167,17 @@ def send_spark_put(url, data, js=False):
 def help_me():
 
     return "Sure! I can help. Below are the commands that I understand:<br/>" \
-      "`Run [attached file]` - I will run attached virl file.<br/>" \
-      "`Start [simulation file name]` - I will start specified simulation<br/>" \
-      "`Stop [simulation id]` - I will stop simulation with specified ID<br/>" \
-      "`List` - I will provide a list of VIRL files present on local HDD<br/>" \
-      "`Check VIRL` - I will check VIRL and see if any simulations are running<br/>"
+           "`Run [attached file]` - I will run attached virl file.<br/>" \
+           "`Start [simulation file name]` - I will start specified simulation<br/>" \
+           "`Stop [simulation id]` - I will stop simulation with specified ID<br/>" \
+           "`List` - I will provide a list of VIRL files present on local HDD<br/>" \
+           "`Check VIRL` - I will check VIRL and see if any simulations are running<br/>"
 
 
 def greetings():
 
     return "Hi my name is %s.<br/>" \
-      "Type `Help me` to see what I can do.<br/>" % bot_name
+           "Type `Help me` to see what I can do.<br/>" % bot_name
 
 
 def handle_text(text, filename=None):
@@ -194,27 +194,27 @@ def handle_text(text, filename=None):
         sim_id = start_sim(filename)
         if sim_id[0]:
             result = ("Simulation `%s` was successfully started.<br/>"\
-              "To access your simulation navigate to [http://198.18.134.1:19400/simulation/guest/%s/](http://198.18.134.1:19400/simulation/guest/%s/) URL</br>"\
-              "Live visualization is accessible via [http://198.18.134.1:19402/?sim_id=%s](http://198.18.134.1:19402/?sim_id=%s) URL" % (sim_id[1],sim_id[1],sim_id[1],sim_id[1],sim_id[1]))
+                      "To access your simulation navigate to [http://198.18.134.1:19400/simulation/guest/%s/](http://198.18.134.1:19400/simulation/guest/%s/) URL</br>"\
+                      "Live visualization is accessible via [http://198.18.134.1:19402/?sim_id=%s](http://198.18.134.1:19402/?sim_id=%s) URL" % (sim_id[1],sim_id[1],sim_id[1],sim_id[1],sim_id[1]))
         else:
             result = ("Something went wrong while I was trying to start the simulation.<br/>" \
-              "VIRL returned %s error code.<br/>Also, VIRL provided a reason which is <br/>**%s**" % (response[1], response[2]))
+                      "VIRL returned %s error code.<br/>Also, VIRL provided a reason which is <br/>**%s**" % (response[1], response[2]))
     if text.lower().startswith('stop') and len(text) > 5:
         response = stop_sim(text.split(" ")[1])
         if response:
             result = "The simulation was successfully stopped!"
         else:
             result = "Something went wrong while I was trying to stop a simulation.\n" \
-              "Please make sure provided simulation ID is correct!"
+                     "Please make sure provided simulation ID is correct!"
     if text.lower().startswith('start') and len(text) > 6:
         response = start_sim(text.split(" ")[1])
         if response[0]:
             result = ("Simulation `%s` was successfully started.<br/>"\
-              "To access your simulation navigate to [http://198.18.134.1:19400/simulation/guest/%s/](http://198.18.134.1:19400/simulation/guest/%s/) URL</br>"\
-              "Live visualization is accessible via [http://198.18.134.1:19402/?sim_id=%s](http://198.18.134.1:19402/?sim_id=%s) URL" % (response[1],response[1],response[1],response[1],response[1]))
+                      "To access your simulation navigate to [http://198.18.134.1:19400/simulation/guest/%s/](http://198.18.134.1:19400/simulation/guest/%s/) URL</br>"\
+                      "Live visualization is accessible via [http://198.18.134.1:19402/?sim_id=%s](http://198.18.134.1:19402/?sim_id=%s) URL" % (response[1],response[1],response[1],response[1],response[1]))
         else:
             result = ("Something went wrong while I was trying to start the simulation.<br/>" \
-              "VIRL returned %s error code.<br/>Also, VIRL provided a reason which is <br/>**%s**" % (response[1], response[2]))
+                      "VIRL returned %s error code.<br/>Also, VIRL provided a reason which is <br/>**%s**" % (response[1], response[2]))
     if text.lower().startswith('list'):
         result = virl_files()
     if text.lower().startswith('check virl'):
@@ -235,11 +235,11 @@ def get_files(file_urls, room_id):
             with open("./sims/" + filename, 'wb') as f:
                 f.write(response.content)
                 send_spark_post(URL + "/messages",
-                        {"roomId": room_id, "markdown": ' Received and saved - ' + filename})
+                                {"roomId": room_id, "markdown": ' Received and saved - ' + filename})
                 return filename
         else:
             send_spark_post(URL + "/messages",
-                    {"roomId": room_id, "markdown": '**Sorry but I only accept VIRL files**'})
+                            {"roomId": room_id, "markdown": '**Sorry but I only accept VIRL files**'})
 
 
 def webhook():
@@ -254,7 +254,7 @@ def webhook():
     target_url = ""
 
     ngrok_url = requests.get(
-      "http://127.0.0.1:4040/api/tunnels", headers={"Content-Type": "application/json"}).json()
+        "http://127.0.0.1:4040/api/tunnels", headers={"Content-Type": "application/json"}).json()
     for urls in ngrok_url["tunnels"]:
         if "https://" in urls['public_url']:
             target_url = urls['public_url']
@@ -268,7 +268,7 @@ def webhook():
     if len(webhooks) == 0:
         for resource in resources:
             payload = {"name": name, "targetUrl": target_url,
-                   "resource": resource, "event": "created", "filter" : "personEmail="+EMAIL}
+                       "resource": resource, "event": "created", "filter" : "personEmail="+EMAIL}
             webhook = send_spark_post(url, payload, js=False)
             if webhook.ok:
                 status = True
@@ -285,7 +285,7 @@ def webhook():
                     print("Webhook was removed")
         for resource in resources:
             payload = {"name": name, "targetUrl": target_url,
-               "resource": resource, "event": "created", "filter" : "personEmail="+EMAIL}
+                       "resource": resource, "event": "created", "filter" : "personEmail="+EMAIL}
             webhook=send_spark_post(url, payload, js=False)
             if webhook.ok:
                 status = True
@@ -306,10 +306,10 @@ def virl_files():
                 file_name = file
     if num == 0:
         return "**No VIRL files are present on local HDD.<br/>" \
-          "Use `run` command to upload a file and run it."
+               "Use `run` command to upload a file and run it."
     return "**Found " + str(num) + " VIRL file(s) on local HDD**.<br/>" + contents + \
-      "> **Note:** You can say `start " + file_name + \
-      "` and I will start the simulation for you."
+           "> **Note:** You can say `start " + file_name + \
+           "` and I will start the simulation for you."
 
 def check_virl():
 
@@ -320,7 +320,7 @@ def check_virl():
 
     # Make a request call with method get to the VIRL server
     response = requests.get(
-      URL, auth=("guest", "guest"), headers=headers).json()
+        URL, auth=("guest", "guest"), headers=headers).json()
 
     # Print how many active simulations were found.
     if len(response["simulations"]) == 0:
@@ -328,7 +328,7 @@ def check_virl():
         return message
     else:
         message = ("**VIRL reports " +
-          str(len(response["simulations"])) + " active simulation(s).**<br/>")
+                   str(len(response["simulations"])) + " active simulation(s).**<br/>")
         sim_name = None
         # Iterate over the response and print each simulation to the user.
         # If user recognizes the simulation return it.
@@ -355,13 +355,13 @@ def spark_webhook():
             pprint(webhook)
         if resource == "memberships" and senders_email == bot_email:
             send_spark_post(URL + "/messages",
-                    {
-                      "roomId": room_id,
-                      "markdown": (greetings() +
-                             "**Note This is a group room and you have to call "
-                             "me specifically with `@%s` for me to respond**" % bot_name)
-                    }
-                    )
+                            {
+                                "roomId": room_id,
+                                "markdown": (greetings() +
+                                             "**Note This is a group room and you have to call "
+                                             "me specifically with `@%s` for me to respond**" % bot_name)
+                            }
+                            )
 
         msg = None
         filename = None
@@ -382,12 +382,12 @@ def spark_webhook():
                 msg = handle_text(in_message)
             if msg != None:
                 send_spark_post(URL + "/messages",
-                        {"roomId": room_id, "markdown": msg})
+                                {"roomId": room_id, "markdown": msg})
         return "true"
     elif request.method == 'GET':
         message = "<center><img src=\"http://bit.ly/SparkBot-512x512\" alt=\"Spark Bot\" style=\"width:256; height:256;\"</center>" \
-          "<center><h2><b>Congratulations! Your <i style=\"color:#ff8000;\">%s</i> bot is up and running.</b></h2></center>" \
-          "<center><b><i>Please don't forget to create Webhooks to start receiving events from Cisco Spark!</i></b></center>" % bot_name
+                  "<center><h2><b>Congratulations! Your <i style=\"color:#ff8000;\">%s</i> bot is up and running.</b></h2></center>" \
+                  "<center><b><i>Please don't forget to create Webhooks to start receiving events from Cisco Spark!</i></b></center>" % bot_name
         return message
 
 
@@ -397,10 +397,10 @@ def main():
         test_auth = send_spark_get(URL + "/people/me", js=False)
         if test_auth.status_code == 401:
             print("Looks like provided access token is not correct. \n"
-                "Please review it and make sure it belongs to your bot account.\n"
-                "Do not worry if you have lost the access token. "
-                "You can always go to https://developer.ciscospark.com/apps.html "
-                "URL and generate a new access token.")
+                  "Please review it and make sure it belongs to your bot account.\n"
+                  "Do not worry if you have lost the access token. "
+                  "You can always go to https://developer.ciscospark.com/apps.html "
+                  "URL and generate a new access token.")
             sys.exit()
         if test_auth.status_code == 200:
             test_auth = test_auth.json()
@@ -408,18 +408,18 @@ def main():
             bot_email = test_auth.get("emails", "")[0]
     else:
         print("'bearer' variable is empty! \n"
-            "Please populate it with bot's access token and run the script again.\n"
-            "Do not worry if you have lost the access token. "
-            "You can always go to https://developer.ciscospark.com/apps.html "
-            "URL and generate a new access token.")
+              "Please populate it with bot's access token and run the script again.\n"
+              "Do not worry if you have lost the access token. "
+              "You can always go to https://developer.ciscospark.com/apps.html "
+              "URL and generate a new access token.")
         sys.exit()
 
     if "@sparkbot.io" not in bot_email:
         print("You have provided access token which does not belong to your bot.\n"
-            "Please review it and make sure it belongs to your bot account.\n"
-            "Do not worry if you have lost the access token. "
-            "You can always go to https://developer.ciscospark.com/apps.html "
-            "URL and generate a new access token.")
+              "Please review it and make sure it belongs to your bot account.\n"
+              "Do not worry if you have lost the access token. "
+              "You can always go to https://developer.ciscospark.com/apps.html "
+              "URL and generate a new access token.")
         sys.exit()
     else:
         app.run(host='localhost', port=8080)
@@ -427,11 +427,11 @@ def main():
 if __name__ == "__main__":
     if ngrok():
         if platform.system() != "Windows":
-            ngrok_run = subprocess.Popen(
-              ["./ngrok http 8080"], shell=True,
-               stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                 universal_newlines=True)
+            ngrok_run = subprocess.Popen(["./ngrok http 8080"],
+                                         shell=True,
+                                         stdout=subprocess.PIPE,
+                                         stderr=subprocess.PIPE,
+                                         universal_newlines=True)
             print("Waiting for ngrok to come up ...")
             time.sleep(2)
             print("Success! Ngrok is up")

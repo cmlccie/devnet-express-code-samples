@@ -35,10 +35,9 @@ def main():
             print("----------------------------------")
 
         try:
-            request = requests.get(
-            url = restURL,
-            auth = HTTPBasicAuth(username,password),
-            verify=False)
+            request = requests.get(url = restURL,
+                                   auth = HTTPBasicAuth(username,password),
+                                   verify=False)
 
             parsed = request.json
             print(json.dumps(parsed(), indent=2))
