@@ -1,0 +1,20 @@
+# Docker Compose file for ${DOCKER_USER_ID}/dna-explained-demobot:latest
+# See ${DOCKER_USER_ID}/dna-explained-demobot:latest
+
+# Equivalent docker run command
+# docker run -it -p 8080 -p 4040 --rm --privileged --name demobot ${DOCKER_USER_ID}/dna-explained-demobot:latest
+
+version: '2'
+services:
+  demobot:
+    image: "${DOCKER_USER_ID}/dna-explained-demobot:latest"
+    container_name: demobot
+    privileged: true
+    environment:
+      - ANYCONNECT_HOSTNAME="dcloud-rtp-anyconnect.cisco.com"
+      - ANYCONNECT_USERNAME="v355user16"
+      - ANYCONNECT_PASSWORD="e79a07"
+      - SPARK_EMAIL="chrlunsf@cisco.com"
+    ports:
+      - "4040:4040"
+      - "8080:8080"
