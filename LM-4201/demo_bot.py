@@ -422,7 +422,7 @@ def main():
         "URL and generate a new access token.")
     sys.exit()
   else:
-    app.run(host='localhost', port=8080)
+    app.run(host='0.0.0.0', port=8080)
 
 if __name__ == "__main__":
   if ngrok():
@@ -444,3 +444,4 @@ if __name__ == "__main__":
       print("Success! Ngrok is up")
       if webhook():
         main()
+

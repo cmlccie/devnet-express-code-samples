@@ -14,6 +14,7 @@ RUN apt-get -yq update && \
     apt-get -yq install vpnc-scripts && \
     apt-get -yq install openconnect && \
     apt-get -yq install unzip && \
+    apt-get -yq install vim && \
     apt-get -yq autoremove && \
     apt-get -yq clean
 
@@ -26,6 +27,10 @@ WORKDIR /root/virl-demo
 RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip && \
     unzip ngrok-stable-linux-amd64.zip && \
     rm ngrok-stable-linux-amd64.zip
+
+# Create ngrok config file
+RUN mkdir ~/.ngrok2 && \
+    echo web_addr: 0.0.0.0:4040 >> ~/.ngrok2/ngrok.yml
 
 # Copy Scripts
 COPY docker_launch_bot.sh demo_bot.py virl.py requirements.txt /root/virl-demo/
@@ -42,3 +47,4 @@ VOLUME ["/root/virl-demo","/root/virl-demo/sims"]
 EXPOSE 4040 8080
 
 CMD ["/root/virl-demo/docker_launch_bot.sh"]
+
